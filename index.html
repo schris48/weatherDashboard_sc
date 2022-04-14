@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Weather Dashboard</h1>
+    </div>
+    <nav>
+      <section>
+        <h2>Search for a City:</h2>
+        <input type="search" class="search-input" placeholder="San Diego" />
+          <button type="search" class="btn btn-primary">Search</button>
+            <ul class="cities-list">
+              <li class="cities-list-item">
+              Austin
+              </li>
+              <li class="cities-list-item">
+              Chicago
+              </li>
+              <li class="cities-list-item">
+              New York
+              </li>
+            </ul>
+      </section>
+    </nav>
+  </header>
+  <main>
+    <section class="currentCity">
+      <h2>city name (date) (weatherIcon) placeholder</h2>
+      <ul>
+        <li>
+         Temp: []
+        </li>
+        <li>
+          Wind: []
+        </li>
+        <li>
+          Humidity: [] %
+        </li>
+        <li>
+          UV index: []
+        </li>
+      </ul>
+    </section>
+    <section class="fiveDayForecast">
+      <h3>5-Day Forecast</h3>
+      <div class="card" style="width: 14rem;">
+        <div class="card-body">
+          <h4 class="card-title">D/MM/YYYY</h4>
+          <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+          <p class="card-text" id="dayOneTemp">Temp: </p>
+          <p class="card-text" id="dayOneWind">Wind: </p>
+          <p class="card-text" id="dayOneHumidity">Humidity: </p>
+        </div>
+      </div>
+      <div class="card" style="width: 14rem;">
+        <div class="card-body">
+          <h4 class="card-title">D/MM/YYYY</h4>
+            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+            <p class="card-text" id="dayOneTemp">Temp: </p>
+            <p class="card-text" id="dayOneWind">Wind: </p>
+            <p class="card-text" id="dayOneHumidity">Humidity: </p>
+        </div>
+        <div class="card" style="width: 14rem;">
+          <div class="card-body">
+            <h4 class="card-title">D/MM/YYYY</h4>
+            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+            <p class="card-text" id="dayOneTemp">Temp: </p>
+            <p class="card-text" id="dayOneWind">Wind: </p>
+            <p class="card-text" id="dayOneHumidity">Humidity: </p>
+          </div>
+        </div>
+        <div class="card" style="width: 14rem;">
+        <div class="card-body">
+          <h4 class="card-title">D/MM/YYYY</h4>
+            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+            <p class="card-text" id="dayOneTemp">Temp: </p>
+            <p class="card-text" id="dayOneWind">Wind: </p>
+            <p class="card-text" id="dayOneHumidity">Humidity: </p>
+        </div>
+        <div class="card" style="width: 14rem;">
+          <div class="card-body">
+          <h4 class="card-title">D/MM/YYYY</h4>
+            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+            <p class="card-text" id="dayOneTemp">Temp: </p>
+            <p class="card-text" id="dayOneWind">Wind: </p>
+            <p class="card-text" id="dayOneHumidity">Humidity: </p>
+            </div>
+          <div class="card" style="width: 14rem;">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">D/MM/YYYY</h4>
+            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+            <p class="card-text" id="dayOneTemp">Temp: </p>
+            <p class="card-text" id="dayOneWind">Wind: </p>
+            <p class="card-text" id="dayOneHumidity">Humidity: </p>
+          </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
