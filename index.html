@@ -16,25 +16,17 @@
     <nav>
       <section>
         <h2>Search for a City:</h2>
-        <input type="search" class="search-input" placeholder="San Diego" />
-          <button type="search" class="btn btn-primary">Search</button>
-            <ul class="cities-list">
-              <li class="cities-list-item">
-              Austin
-              </li>
-              <li class="cities-list-item">
-              Chicago
-              </li>
-              <li class="cities-list-item">
-              New York
-              </li>
-            </ul>
+        <input type="search" id="searchInput" class="search-input" placeholder="San Diego" />
+          <button type="search" id="searchBtn" class="btn btn-primary">Search</button>
+            <ul class="list-cities" id="listCities"></ul>
       </section>
     </nav>
   </header>
   <main>
     <section class="currentCity">
-      <h2>city name (date) (weatherIcon) placeholder</h2>
+      <h2>
+        city name: <span id="currentCityName"></span>weatherIcon: img
+      </h2>
       <ul>
         <li>
          Temp: []
