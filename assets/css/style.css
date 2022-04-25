@@ -62,10 +62,6 @@ li {
   top: 0;
 }
 
-.current-weather-list {
-  display: none;
-}
-
 .currentCity {
   float: right;
 }
@@ -73,4 +69,17 @@ li {
 .card-body {
   background-color: #33475B;
   display: inline;
+}
+
+.current-weather-list {
+    display: none;
+}
+
+.current-weather-list-item {
+  padding: 4px;
+}
+
+.uvIndex {
+  padding: 4px;
+  border-radius: 4px;
 }
