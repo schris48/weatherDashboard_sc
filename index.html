@@ -25,20 +25,21 @@
   <main>
     <section class="currentCity">
       <h2>
-        city name: <span id="currentCityName"></span>weatherIcon: img
+        <span id="currentCityName"></span><span id="currentDate"></span>
+        <span id="currentCityWeatherIcon"></span>
       </h2>
       <ul>
         <li>
-         Temp: []
+         Temp: <span id="currentCityTemp"></span>
         </li>
         <li>
-          Wind: []
+          Wind: <span id="currentCityWind"></span>
         </li>
         <li>
-          Humidity: [] %
+          Humidity: <span id="currentCityHumidity"></span>
         </li>
         <li>
-          UV index: []
+          UV Index: <span id="uvi"></span>
         </li>
       </ul>
     </section>
@@ -48,9 +49,9 @@
         <div class="card-body">
           <h4 class="card-title">D/MM/YYYY</h4>
           <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
-          <p class="card-text" id="dayOneTemp">Temp: </p>
-          <p class="card-text" id="dayOneWind">Wind: </p>
-          <p class="card-text" id="dayOneHumidity">Humidity: </p>
+          <p class="card-text">Temp:<span id="dayOneTemp"></span></p>
+          <p class="card-text">Wind:<span id="dayOneWind"></span></p>
+          <p class="card-text">Humidity:<span id="dayOneHumidity"></span></p>
         </div>
       </div>
       <div class="card" style="width: 14rem;">
