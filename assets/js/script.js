@@ -1,3 +1,5 @@
+var searchIdCounter = 0;
+var citiesListOl = document.querySelector("#citiesList");
 var currentWeatherListEl = document.querySelector("#currentWeatherList");
 var uvEl = document.getElementById("uvi");
 
@@ -54,12 +56,47 @@ var getForecast = function(lat, lon) {
   uvi(uvIndexEl);
 
   // get current weather array
-  var currentWeatherArr = data.current.weather
+  var currentWeatherArr = data.current.weather;
+
+  // get daily weather arrays
+  var day1WeatherArr = data.daily[1].weather;
+  var day2WeatherArr = data.daily[2].weather;
+  var day3WeatherArr = data.daily[3].weather;
+  var day4WeatherArr = data.daily[4].weather;
+  var day5WeatherArr = data.daily[5].weather;
 
   // get weather icon from current weather array
   var currentWeatherIconId = currentWeatherArr[0].icon;
   console.log(currentWeatherIconId)
   currentWeatherIcon(currentWeatherIconId);
+
+  // Get five day forecast icons start
+  
+  // day 1 icon
+  var day1WeatherIconId = day1WeatherArr[0].icon;
+  console.log(day1WeatherIconId)
+  day1WeatherIcon(day1WeatherIconId);
+
+  // day 2 icon
+  var day2WeatherIconId = day2WeatherArr[0].icon;
+  console.log(day2WeatherIconId)
+  day2WeatherIcon(day2WeatherIconId);
+
+  // day 3 icon
+  var day3WeatherIconId = day3WeatherArr[0].icon;
+  console.log(day3WeatherIconId)
+  day3WeatherIcon(day3WeatherIconId);
+
+  // day 4 icon
+  var day4WeatherIconId = day4WeatherArr[0].icon;
+  console.log(day4WeatherIconId)
+  day4WeatherIcon(day4WeatherIconId);
+
+  // day 5 icon
+  var day5WeatherIconId = day5WeatherArr[0].icon;
+  console.log(day5WeatherIconId)
+  day5WeatherIcon(day5WeatherIconId);
+  // Get five day forecast icons ends
 
   // get day 1 date
   var dailyWeather1 = new Date(data.daily[1].dt * 1000).toLocaleString().split(",")[0];
@@ -213,6 +250,38 @@ var currentWeatherIcon = function(currentWeatherIcon) {
   $("#currentCityWeatherIcon").html("<img src='" + iconUrl + "'>");
 }
 
+// Get weather icons for five day forecast starts
+
+// day 1 icon
+var day1WeatherIcon = function(day1Icon) {
+  var icon1Url = `http://openweathermap.org/img/wn/${day1Icon}@2x.png`
+  $("#day1WeatherIcon").html("<img src='" + icon1Url + "'>");
+}
+
+// day 2 icon
+var day2WeatherIcon = function(day2Icon) {
+  var icon2Url = `http://openweathermap.org/img/wn/${day2Icon}@2x.png`
+  $("#day2WeatherIcon").html("<img src='" + icon2Url + "'>");
+}
+
+// day 3 icon
+var day3WeatherIcon = function(day3Icon) {
+  var icon3Url = `http://openweathermap.org/img/wn/${day3Icon}@2x.png`
+  $("#day3WeatherIcon").html("<img src='" + icon3Url + "'>");
+}
+
+// day 4 icon
+var day4WeatherIcon = function(day4Icon) {
+  var icon4Url = `http://openweathermap.org/img/wn/${day4Icon}@2x.png`
+  $("#day4WeatherIcon").html("<img src='" + icon4Url + "'>");
+}
+
+// day 5 icon
+var day5WeatherIcon = function(day5Icon) {
+  var icon5Url = `http://openweathermap.org/img/wn/${day5Icon}@2x.png`
+  $("#day5WeatherIcon").html("<img src='" + icon5Url + "'>");
+}
+
 // Get dates for five day forecast start
 
 // day 1 date
@@ -326,85 +395,22 @@ var humidityDay5 = function(humidity5) {
 }
 // Get humidity for five day forecasts ends
 
-// Five day forecast array
-const fiveDayArr = [
-    {
-        day: 1,
-      //   date:
-      //   icon:
-      //   temp:
-      //   wind:
-      //   humidity:
-    },
-    {
-        day: 2,
-      //   date:
-      //   icon:
-      //   temp:
-      //   wind:
-      //   humidity:
-    },
-    {
-      day: 3,
-    //   date:
-    //   icon:
-    //   temp:
-    //   wind:
-    //   humidity:
-    },
-    {
-      day: 4,
-    //   date:
-    //   icon:
-    //   temp:
-    //   wind:
-    //   humidity:
-    },
-    {
-      day: 5,
-    //   date:
-    //   icon:
-    //   temp:
-    //   wind:
-    //   humidity:
-    }
-  ];
-        
-// var fiveDayArr = ['dayOne', 'dayTwo', 'dayThree', 'dayFour', 'dayFive'];
-
-// generate search history list
-var generateSearch = function(searchText, searchList) {
-  var searchLi = $("<li>").addClass("list-item-cities");
-  var searchP = $("<p>")
-    .addClass("m-1")
-    .text(searchText);
-  // append p element to parent li
-    searchLi.append(searchP);
-  // append to ul on page
-  $("#list-" + searchList).append(searchLi);
-
-//   var weatherIcon = "http://openweathermap.org/img/wn/" + getWeatherIconId + "@2x.png";
-//   console.log(weatherIcon);
-  // each loop in the array requires its own image
-  // to attach to our forecast container (build array for 5 day forecast)
-}
-
 // load search results
-var loadSearches = function() {
+var loadSearches = function(newSearchItem) {
   // check for local storage or empty array
   var searches = JSON.parse(localStorage.getItem("allSearches")) || []
-
-  // check for empty or null value in search field
+  console.log(searches);
   if (!searches) {
     searches = [];
-
-  // create list item for each searchItem
-  searches.forEach(function(searchItem) {
-  console.log(searchItem);
-    generateSearch();
-  });
+  }
+  else if(newSearchItem) {
+    $("#listCities").append("<li>" + newSearchItem + "</li>");
+  } else {
+    searches.forEach(function(searchItem) {
+      $("#listCities").append("<li>" + searchItem.text + "</li>");
+    });
+  }
 }
-
 
 // search button handler
 $("#searchBtn").on("click", function() {
@@ -418,17 +424,27 @@ $("#searchBtn").on("click", function() {
   // check for local storage or empty array
   var searches = JSON.parse(localStorage.getItem("allSearches")) || []
   var newSearch = {
-    'text': search,
-  } 
+    'text': search
+  }
   
   searches.push(newSearch);
 
-  console.log(searches);
-
   // stringify value of local storage
   localStorage.setItem("allSearches", JSON.stringify(searches))
-  });
-}
+  console.log(newSearch.text);
+  loadSearches(newSearch.text);
+});
 
+// // generate search history list
+// var generateSearch = function(searchList) {
+//   console.log(searchList);
+//   for (var i = 0; i <= 0; i++)
+//   var cityListItem = document.createElement("li")
+//   cityListItem.textContent = searches[i];
+//   cityListItem.setAttribute = ("value", searches[i]);
+//   $(this).append();
+
+  
+// }
 // load search history
 loadSearches();

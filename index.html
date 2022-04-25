@@ -18,7 +18,7 @@
         <h2>Search for a City:</h2>
         <input type="search" id="searchInput" class="search-input" placeholder="San Diego" />
           <button type="search" id="searchBtn" class="btn btn-primary">Search</button>
-            <ul class="list-cities" id="listCities"></ul>
+            <ol class="list-cities" id="listCities"></ol>
       </section>
     </nav>
   </header>
@@ -48,7 +48,7 @@
       <div class="card" style="width: 14rem;">
         <div class="card-body">
           <h4 class="card-title" id="day1-date"></h4>
-          <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
+          <span id="day1WeatherIcon"></span>
           <p class="card-text">Temp: <span id="dayOneTemp"></span></p>
           <p class="card-text">Wind: <span id="dayOneWind"></span></p>
           <p class="card-text">Humidity: <span id="dayOneHumidity"></span></p>
@@ -57,39 +57,37 @@
       <div class="card" style="width: 14rem;">
         <div class="card-body">
           <h4 class="card-title" id="day2-date"></h4>
-            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
-            <p class="card-text">Temp: <span id="dayTwoTemp"></span></p>
-            <p class="card-text">Wind: <span id="dayTwoWind"></span></p>
-            <p class="card-text">Humidity: <span id="dayTwoHumidity"></span></p>
-        </div>
-        <div class="card" style="width: 14rem;">
-          <div class="card-body">
-            <h4 class="card-title" id="day3-date"></h4>
-            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
-            <p class="card-text">Temp: <span id="dayThreeTemp"></span></p>
-            <p class="card-text">Wind: <span id="dayThreeWind"></span></p>
-            <p class="card-text">Humidity: <span id="dayThreeHumidity"></span></p>
+          <span id="day2WeatherIcon"></span>
+          <p class="card-text">Temp: <span id="dayTwoTemp"></span></p>
+          <p class="card-text">Wind: <span id="dayTwoWind"></span></p>
+          <p class="card-text">Humidity: <span id="dayTwoHumidity"></span></p>
+      </div>
+      <div class="card" style="width: 14rem;">
+        <div class="card-body">
+          <h4 class="card-title" id="day3-date"></h4>
+          <span id="day3WeatherIcon"></span>
+          <p class="card-text">Temp: <span id="dayThreeTemp"></span></p>
+          <p class="card-text">Wind: <span id="dayThreeWind"></span></p>
+          <p class="card-text">Humidity: <span id="dayThreeHumidity"></span></p>
           </div>
-        </div>
-        <div class="card" style="width: 14rem;">
+      </div>
+      <div class="card" style="width: 14rem;">
         <div class="card-body">
           <h4 class="card-title" id="day4-date"></h4>
-            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
-            <p class="card-text">Temp: <span id="dayFourTemp"></span></p>
-            <p class="card-text">Wind: <span id="dayFourWind"></span></p>
-            <p class="card-text">Humidity: <span id="dayFourHumidity"></span></p>
+          <span id="day4WeatherIcon"></span>
+          <p class="card-text">Temp: <span id="dayFourTemp"></span></p>
+          <p class="card-text">Wind: <span id="dayFourWind"></span></p>
+          <p class="card-text">Humidity: <span id="dayFourHumidity"></span></p>
         </div>
-        <div class="card" style="width: 14rem;">
-          <div class="card-body">
+      <div class="card" style="width: 14rem;">
+        <div class="card-body">
           <h4 class="card-title" id="day5-date"></h4>
-            <img src="./assets/images/weather.svg" class="card-img-dynamic" alt="placeholder weather image">
-            <p class="card-text">Temp: <span id="dayFiveTemp"></span></p>
-            <p class="card-text">Wind: <span id="dayFiveWind"></span></p>
-            <p class="card-text">Humidity: <span id="dayFiveHumidity"></span></p>
-            </div>
-          <div class="card" style="width: 14rem;">
+          <span id="day5WeatherIcon"></span>
+          <p class="card-text">Temp: <span id="dayFiveTemp"></span></p>
+          <p class="card-text">Wind: <span id="dayFiveWind"></span></p>
+          <p class="card-text">Humidity: <span id="dayFiveHumidity"></span></p>
         </div>
-      </div>
+      <div class="card" style="width: 14rem;">
     </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
