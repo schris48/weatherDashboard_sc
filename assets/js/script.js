@@ -1,11 +1,12 @@
+var currentWeatherListEl = document.querySelector("#currentWeatherList");
+var uvEl = document.getElementById("uvi");
+
 // OpenWeather API key
 var apiKey = "f43bef6702081b0d80bffa501085acdf";
 
-// Five day forecast array
-var fiveDayArr = ['dayOne', 'dayTwo', 'dayThree', 'dayFour', 'dayFive']
-
 // Get latitude/ longitude
 var getLatLon = function(search) {
+  currentWeatherListEl.style.display="block";
   var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}`
     fetch(apiUrl)
     .then(function(res) {
@@ -51,8 +52,6 @@ var getForecast = function(lat, lon) {
   var uvIndexEl = data.current.uvi
   console.log(uvIndexEl);
   uvi(uvIndexEl);
-  
-  // currentWeatherIcon(data.current)
 
   // get current weather array
   var currentWeatherArr = data.current.weather
@@ -61,16 +60,31 @@ var getForecast = function(lat, lon) {
   var currentWeatherIconId = currentWeatherArr[0].icon;
   console.log(currentWeatherIconId)
   currentWeatherIcon(currentWeatherIconId);
-  
-  // // get weather icon based on icon id
-  // var iconCall = `http://openweathermap.org/img/wn/${currentWeatherIconId}@2x.png`
-    
-    // fetch(iconCall)
-    // .then(function(res) {
-    //   return res.json
-    // })
-    // console.log(currentWeatherEl);
-    // currentWeatherIcon(currentWeatherIconEl)
+
+  // get day 1 weather array
+  var dailyWeather1 = new Date(data.daily[1].dt * 1000).toLocaleString().split(",")[0];
+  console.log("Day 1: " + dailyWeather1);
+  day1Weather(dailyWeather1);
+
+  // get day 2 weather array
+  var dailyWeather2 = new Date(data.daily[2].dt * 1000).toLocaleString().split(",")[0]
+  console.log("Day 2: " + dailyWeather2);
+  day2Weather(dailyWeather2);
+
+  // get day 3 weather array
+  var dailyWeather3 = new Date(data.daily[3].dt * 1000).toLocaleString().split(",")[0]
+  console.log("Day 3: " + dailyWeather3);
+  day3Weather(dailyWeather3);
+
+  // get day 4 weather array
+  var dailyWeather4 = new Date(data.daily[4].dt * 1000).toLocaleString().split(",")[0]
+  console.log("Day 4: " + dailyWeather4);
+  day4Weather(dailyWeather4);
+
+  // get day 5 weather array
+  var dailyWeather5 = new Date(data.daily[5].dt * 1000).toLocaleString().split(",")[0]
+  console.log("Day 5: " + dailyWeather5);
+  day5Weather(dailyWeather5);
 });
 };
 
@@ -78,7 +92,8 @@ var getCurrentCity = function(cityName) {
   $("#currentCityName").text(cityName);
 }
 
-var getCurrentDate = function(moment) {
+var getCurrentDate = function() {
+    //console.log('Moment test: ', moment().format('l'))
   $("#currentDate").text(moment().format('l'));
 }
 
@@ -96,6 +111,20 @@ var currentCityHumidity = function(currentCityHumidity) {
 
 var uvi = function(uvIndex) {
   $("#uvi").text(uvIndex);
+  if (uvIndex <= 2) {
+    uvEl.style.backgroundColor="green";
+  }
+  else if (uvIndex <= 5) {
+    uvEl.style.backgroundColor="yellow";
+  }
+  else if (uvIndex <= 7) {
+    uvEl.style.backgroundColor="orange";
+  }
+  else if (uvIndex <= 10) {
+    uvEl.style.backgroundColor="red";
+  } else {
+    uvEl.style.backgroundColor="purple";
+  }
 }
 
 var currentWeatherIcon = function(currentWeatherIcon) {
@@ -103,17 +132,71 @@ var currentWeatherIcon = function(currentWeatherIcon) {
   $("#currentCityWeatherIcon").html("<img src='" + iconUrl + "'>");
 }
 
-// var currentWeatherIcon = function(current) {
-//   var iconUrl = `http://api.openweathermap.org/data/2.5/weather?q=${current}`
-  
-//   fetch(iconUrl)
-//   .then(function(res) {
-//     return res.json()
-//   })
-//   .then(function(current) {
-//     console.log(current.weather.id)
-//   })
-// };
+var day1Weather = function(day1) {
+  $("#day1-date").text(day1);
+}
+
+var day2Weather = function(day2) {
+  $("#day2-date").text(day2);
+}
+
+var day3Weather = function(day3) {
+  $("#day3-date").text(day3);
+}
+
+var day4Weather = function(day4) {
+  $("#day4-date").text(day4);
+}
+
+var day5Weather = function(day5) {
+  $("#day5-date").text(day5);
+}
+
+// Five day forecast array
+const fiveDayArr = [
+    {
+        day: 1,
+      //   date:
+      //   icon:
+      //   temp:
+      //   wind:
+      //   humidity:
+    },
+    {
+        day: 2,
+      //   date:
+      //   icon:
+      //   temp:
+      //   wind:
+      //   humidity:
+    },
+    {
+      day: 3,
+    //   date:
+    //   icon:
+    //   temp:
+    //   wind:
+    //   humidity:
+    },
+    {
+      day: 4,
+    //   date:
+    //   icon:
+    //   temp:
+    //   wind:
+    //   humidity:
+    },
+    {
+      day: 5,
+    //   date:
+    //   icon:
+    //   temp:
+    //   wind:
+    //   humidity:
+    }
+  ];
+        
+// var fiveDayArr = ['dayOne', 'dayTwo', 'dayThree', 'dayFour', 'dayFive'];
 
 // generate search history list
 var generateSearch = function(searchText, searchList) {
