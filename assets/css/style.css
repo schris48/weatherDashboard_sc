@@ -15,6 +15,10 @@ div img {
   padding: 5px;
 }
 
+header {
+  display: inline;
+}
+
 h1 {
   text-align: center;
   padding: 3px;
@@ -40,9 +44,13 @@ input {
   border-radius: 10px;
 }
 
-li {
+ul li {
   border-radius: 10px;
   list-style: none;
+}
+
+main {
+  display: inline;
 }
 
 ol {
@@ -52,9 +60,17 @@ ol {
   list-style: none;
 }
 
+ol li, .cities-list-item {
+  background-color: rgb(206, 203, 203);
+  border-radius: 4px;
+  margin: 10px;
+  text-align: center;
+  
+}
+
 .btn {
   display: block;
-  width: 23.25%;
+  width: 96%;
   margin: 10px;
   box-shadow: 0 4px var(--grey);
 }
@@ -72,11 +88,18 @@ ol {
 .currentCity {
   float: right;
   padding: 4px;
+  display: inline-flex;
+  width: 70%;
 }
 
 .card-body {
   background-color: #33475B;
   display: inline;
+}
+
+.container {
+  width: 30%;
+  display: inline-flex;
 }
 
 .current-weather-list {
@@ -87,11 +110,19 @@ ol {
   padding: 4px;
 }
 
-.cities-list-item {
+/* .cities-list-item {
   display: flex;
-}
+  background-color: rgb(206, 203, 203);
+  border-radius: 4px;
+  margin: 10px;
+  text-align: center;
+} */
 
 .fiveDayForecast {
+  display: inline;
+}
+
+.row {
   display: inline;
 }
 

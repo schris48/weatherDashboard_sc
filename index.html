@@ -9,91 +9,95 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-  <header>
-    <div>
-      <h1>Weather Dashboard</h1>
-    </div>
-    <nav>
-      <section>
-        <h2>Search for a City:</h2>
-        <input type="search" id="searchInput" class="search-input" placeholder="San Diego" />
+  <div>
+    <header>
+      <div>
+        <h1>Weather Dashboard</h1>
+      </div>
+      <div class="container">
+        <nav class="row">
+        <section class="col-sm">
+          <h2>Search for a City:</h2>
+          <input type="search" id="searchInput" class="search-input" placeholder="San Diego" />
           <button type="search" id="searchBtn" class="btn btn-primary">Search</button>
-            <ol class="list-cities" id="listCities"></ol>
-      </section>
-    </nav>
-  </header>
-  <main>
-    <section class="currentCity">
-      <h2>
-        <span id="currentCityName"></span> <span id="currentDate"></span>
-        <span id="currentCityWeatherIcon"></span>
-      </h2>
-      <ul class="current-weather-list" id="currentWeatherList">
-        <li class="current-weather-list-item">
-         Temp: <span id="currentCityTemp"></span>
-        </li>
-        <li class="current-weather-list-item">
-          Wind: <span id="currentCityWind"></span>
-        </li>
-        <li class="current-weather-list-item">
-          Humidity: <span id="currentCityHumidity"></span>
-        </li>
-        <li class="current-weather-list-item">
-          UV Index: <span class="uvIndex" id="uvi"></span>
-        </li>
-      </ul>
-    </section>
-    <section class="fiveDayForecast" id="five-day-forecast" style="display: none;">
-      <h3>5-Day Forecast</h3>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h4 class="card-title" id="day1-date"></h4>
-          <span id="day1WeatherIcon"></span>
-          <p class="card-text">Temp: <span id="dayOneTemp"></span></p>
-          <p class="card-text">Wind: <span id="dayOneWind"></span></p>
-          <p class="card-text">Humidity: <span id="dayOneHumidity"></span></p>
-        </div>
+          <ol class="list-cities" id="listCities"></ol>
+        </section>
+        </nav>
       </div>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h4 class="card-title" id="day2-date"></h4>
-          <span id="day2WeatherIcon"></span>
-          <p class="card-text">Temp: <span id="dayTwoTemp"></span></p>
-          <p class="card-text">Wind: <span id="dayTwoWind"></span></p>
-          <p class="card-text">Humidity: <span id="dayTwoHumidity"></span></p>
-      </div>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h4 class="card-title" id="day3-date"></h4>
-          <span id="day3WeatherIcon"></span>
-          <p class="card-text">Temp: <span id="dayThreeTemp"></span></p>
-          <p class="card-text">Wind: <span id="dayThreeWind"></span></p>
-          <p class="card-text">Humidity: <span id="dayThreeHumidity"></span></p>
-          </div>
-      </div>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h4 class="card-title" id="day4-date"></h4>
-          <span id="day4WeatherIcon"></span>
-          <p class="card-text">Temp: <span id="dayFourTemp"></span></p>
-          <p class="card-text">Wind: <span id="dayFourWind"></span></p>
-          <p class="card-text">Humidity: <span id="dayFourHumidity"></span></p>
+    </header>
+    <main>
+        <section class="currentCity col">
+        <h2>
+            <span id="currentCityName"></span> <span id="currentDate"></span>
+            <span id="currentCityWeatherIcon"></span>
+        </h2>
+        <ul class="current-weather-list" id="currentWeatherList">
+            <li class="current-weather-list-item">
+            Temp: <span id="currentCityTemp"></span>
+            </li>
+            <li class="current-weather-list-item">
+            Wind: <span id="currentCityWind"></span>
+            </li>
+            <li class="current-weather-list-item">
+            Humidity: <span id="currentCityHumidity"></span>
+            </li>
+            <li class="current-weather-list-item">
+            UV Index: <span class="uvIndex" id="uvi"></span>
+            </li>
+        </ul>
+        </section>
+        <section class="fiveDayForecast col" id="five-day-forecast" style="display: none;">
+        <h3>5-Day Forecast</h3>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+            <h4 class="card-title" id="day1-date"></h4>
+            <span id="day1WeatherIcon"></span>
+            <p class="card-text">Temp: <span id="dayOneTemp"></span></p>
+            <p class="card-text">Wind: <span id="dayOneWind"></span></p>
+            <p class="card-text">Humidity: <span id="dayOneHumidity"></span></p>
+            </div>
         </div>
-      <div class="card" style="width: 14rem;">
-        <div class="card-body">
-          <h4 class="card-title" id="day5-date"></h4>
-          <span id="day5WeatherIcon"></span>
-          <p class="card-text">Temp: <span id="dayFiveTemp"></span></p>
-          <p class="card-text">Wind: <span id="dayFiveWind"></span></p>
-          <p class="card-text">Humidity: <span id="dayFiveHumidity"></span></p>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+            <h4 class="card-title" id="day2-date"></h4>
+            <span id="day2WeatherIcon"></span>
+            <p class="card-text">Temp: <span id="dayTwoTemp"></span></p>
+            <p class="card-text">Wind: <span id="dayTwoWind"></span></p>
+            <p class="card-text">Humidity: <span id="dayTwoHumidity"></span></p>
         </div>
-      <div class="card" style="width: 14rem;">
-    </section>
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+            <h4 class="card-title" id="day3-date"></h4>
+            <span id="day3WeatherIcon"></span>
+            <p class="card-text">Temp: <span id="dayThreeTemp"></span></p>
+            <p class="card-text">Wind: <span id="dayThreeWind"></span></p>
+            <p class="card-text">Humidity: <span id="dayThreeHumidity"></span></p>
+            </div>
+        </div>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+            <h4 class="card-title" id="day4-date"></h4>
+            <span id="day4WeatherIcon"></span>
+            <p class="card-text">Temp: <span id="dayFourTemp"></span></p>
+            <p class="card-text">Wind: <span id="dayFourWind"></span></p>
+            <p class="card-text">Humidity: <span id="dayFourHumidity"></span></p>
+            </div>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+            <h4 class="card-title" id="day5-date"></h4>
+            <span id="day5WeatherIcon"></span>
+            <p class="card-text">Temp: <span id="dayFiveTemp"></span></p>
+            <p class="card-text">Wind: <span id="dayFiveWind"></span></p>
+            <p class="card-text">Humidity: <span id="dayFiveHumidity"></span></p>
+            </div>
+        <div class="card" style="width: 14rem;">
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </div>
 </body>
 </html>
