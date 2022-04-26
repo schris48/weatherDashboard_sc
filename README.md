@@ -15,5 +15,5 @@ This convenient weather dashboard is designed for travelers wanting to see weath
 * View current UV index with favorable, moderate, or severe color coding
 
 ## More to come
-
-New and improved layout will be released soon!
+* New and improved layout!
+* Search history links!
