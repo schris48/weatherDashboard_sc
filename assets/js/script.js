@@ -1,4 +1,5 @@
 var citiesListOl = document.querySelector("#citiesList");
+var citiesListItem = document.querySelector("#citiesListItem");
 var fiveDayForecastSection = document.querySelector("#five-day-forecast");
 var currentWeatherListEl = document.querySelector("#currentWeatherList");
 var uvEl = document.getElementById("uvi");
@@ -404,17 +405,17 @@ var loadSearches = function(newSearchItem) {
     searches = [];
   }
   else if(newSearchItem) {
-    $("#listCities").append('<li class="cities-list-item">' + newSearchItem + '</li>');
+    $("#listCities").append('<li class="cities-list-item" id="citiesListItem">' + newSearchItem + '</li>');
   } else {
     searches.forEach(function(searchItem) {
-      $("#listCities").append("<li>" + searchItem.text + "</li>");
+      $("#listCities").append('<li class="cities-list-item" id="citiesListItem">' + searchItem.text + '</li>');
     });
   }
 }
 
 // search button handler
 $("#searchBtn").on("click", function() {
-  fiveDayForecastSection.style.display="block";
+  fiveDayForecastSection.style.display="inline-block";
   var search = $("#searchInput").val();
   getLatLon(search)
   if (!search) {
@@ -436,15 +437,10 @@ $("#searchBtn").on("click", function() {
   loadSearches(newSearch.text);
 });
 
-// // generate search history list
-// var generateSearch = function(searchList) {
-//   console.log(searchList);
-//   for (var i = 0; i <= 0; i++)
-//   var cityListItem = document.createElement("li")
-//   cityListItem.textContent = searches[i];
-//   cityListItem.setAttribute = ("value", searches[i]);
-//   $(this).append();
-
+// cities list item event handler
+$("#citiesListItem").on("click", function() {
+  
+})
   
 // }
 // load search history

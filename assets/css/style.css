@@ -110,14 +110,6 @@ ol li, .cities-list-item {
   padding: 4px;
 }
 
-/* .cities-list-item {
-  display: flex;
-  background-color: rgb(206, 203, 203);
-  border-radius: 4px;
-  margin: 10px;
-  text-align: center;
-} */
-
 .fiveDayForecast {
   display: inline;
 }
@@ -129,4 +121,13 @@ ol li, .cities-list-item {
 .uvIndex {
   padding: 4px;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 980px) {
+  main {
+    display: block;
+  }
+  .fiveDayForecast {
+    display: inline-block;
+  }
 }
