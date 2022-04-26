@@ -3,7 +3,7 @@
 This convenient weather dashboard is designed for travelers wanting to see weather outlook for cities across the United States.
 
 ## How it works
-* Type name of U.S. in search input field
+* Type name of U.S. city in search input field
 * Select the search button
 * View dynamic weather results!
 * Hit search again to refresh results
@@ -11,9 +11,9 @@ This convenient weather dashboard is designed for travelers wanting to see weath
 ## Features
 * Current and future weather conditions
 * View forecast up to five days in the future (!) based on daily averages
-* View temperature, wind speed, and humidity
+* View temperature (°F), wind speed (MPH), and humidity (%)
 * View current UV index with favorable, moderate, or severe color coding
 
-### More to come
+## More to come
 
 New and improved layout will be released soon!
