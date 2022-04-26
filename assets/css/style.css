@@ -45,10 +45,17 @@ li {
   list-style: none;
 }
 
+ol {
+  border-top: 1px solid black;
+  margin: 4px;
+  padding-top: 8px;
+  list-style: none;
+}
+
 .btn {
   display: block;
-  width: 24%;
-  margin: 7px;
+  width: 23.25%;
+  margin: 10px;
   box-shadow: 0 4px var(--grey);
 }
 
@@ -64,6 +71,7 @@ li {
 
 .currentCity {
   float: right;
+  padding: 4px;
 }
 
 .card-body {
@@ -77,6 +85,14 @@ li {
 
 .current-weather-list-item {
   padding: 4px;
+}
+
+.cities-list-item {
+  display: flex;
+}
+
+.fiveDayForecast {
+  display: inline;
 }
 
 .uvIndex {

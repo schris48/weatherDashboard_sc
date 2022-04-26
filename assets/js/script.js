@@ -1,5 +1,5 @@
-var searchIdCounter = 0;
 var citiesListOl = document.querySelector("#citiesList");
+var fiveDayForecastSection = document.querySelector("#five-day-forecast");
 var currentWeatherListEl = document.querySelector("#currentWeatherList");
 var uvEl = document.getElementById("uvi");
 
@@ -404,7 +404,7 @@ var loadSearches = function(newSearchItem) {
     searches = [];
   }
   else if(newSearchItem) {
-    $("#listCities").append("<li>" + newSearchItem + "</li>");
+    $("#listCities").append('<li class="cities-list-item">' + newSearchItem + '</li>');
   } else {
     searches.forEach(function(searchItem) {
       $("#listCities").append("<li>" + searchItem.text + "</li>");
@@ -414,6 +414,7 @@ var loadSearches = function(newSearchItem) {
 
 // search button handler
 $("#searchBtn").on("click", function() {
+  fiveDayForecastSection.style.display="block";
   var search = $("#searchInput").val();
   getLatLon(search)
   if (!search) {
