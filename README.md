@@ -9,9 +9,9 @@ This convenient weather dashboard is designed for travelers wanting to see weath
 * Hit search again to refresh results
 
 ## Features
-* Current and future weather conditions
-* View forecast up to five days in the future (!) based on daily averages
-* View temperature (°F), wind speed (MPH), and humidity (%)
+* Find temperature (°F), wind speed (MPH), and humidity (%) for current and future forecast
+* Get forecast up to five days in the future (!) based on daily averages
+* View dynamic icons representing weather conditions
 * View current UV index with favorable, moderate, or severe color coding
 
 ## More to come
