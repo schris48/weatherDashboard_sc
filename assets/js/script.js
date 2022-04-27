@@ -72,7 +72,6 @@ var getForecast = function(lat, lon) {
   currentWeatherIcon(currentWeatherIconId);
 
   // Get five day forecast icons start
-  
   // day 1 icon
   var day1WeatherIconId = day1WeatherArr[0].icon;
   console.log(day1WeatherIconId)
@@ -98,7 +97,8 @@ var getForecast = function(lat, lon) {
   console.log(day5WeatherIconId)
   day5WeatherIcon(day5WeatherIconId);
   // Get five day forecast icons ends
-
+  
+  // Get five day forecast date starts 
   // get day 1 date
   var dailyWeather1 = new Date(data.daily[1].dt * 1000).toLocaleString().split(",")[0];
   console.log("Day 1: " + dailyWeather1);
@@ -123,7 +123,9 @@ var getForecast = function(lat, lon) {
   var dailyWeather5 = new Date(data.daily[5].dt * 1000).toLocaleString().split(",")[0]
   console.log("Day 5: " + dailyWeather5);
   day5Weather(dailyWeather5);
+  // Get five day forecast date ends 
 
+  // Get five day forecast temperatures starts 
   // get day 1 temp
   var day1Temp = data.daily[1].temp.day + " °F";
   console.log(day1Temp);
@@ -148,7 +150,9 @@ var getForecast = function(lat, lon) {
   var day5Temp = data.daily[5].temp.day + " °F";
   console.log(day5Temp);
   tempDay5(day5Temp);
+  // Get five day forecast temperatures ends 
 
+  // Get five day forecast wind starts 
   // get day 1 wind
   var day1Wind = data.daily[1].wind_speed + " MPH";
   console.log(day1Wind);
@@ -173,7 +177,9 @@ var getForecast = function(lat, lon) {
   var day5Wind = data.daily[5].wind_speed + " MPH";
   console.log(day5Wind);
   windDay5(day5Wind);
+  // Get five day forecast wind ends 
 
+  // Get five day forecast humidity starts 
   // get day 1 humidity
   var day1Humidity = data.daily[1].humidity + " %";
   console.log(day1Humidity);
@@ -198,10 +204,12 @@ var getForecast = function(lat, lon) {
   var day5Humidity = data.daily[5].humidity + " %";
   console.log(day5Humidity);
   humidityDay5(day5Humidity);
+  // Get five day forecast humidity ends 
 
 });
 };
 
+// Get current city forecast
 var getCurrentCity = function(cityName) {
   $("#currentCityName").text(cityName);
 }
@@ -222,6 +230,7 @@ var currentCityHumidity = function(currentCityHumidity) {
   $("#currentCityHumidity").text(currentCityHumidity);
 }
 
+// Get UV index and assign background/ text colour based on severity
 var uvi = function(uvIndex) {
   $("#uvi").text(uvIndex);
   if (uvIndex <= 2) {
@@ -276,6 +285,7 @@ var day4WeatherIcon = function(day4Icon) {
   var icon4Url = `http://openweathermap.org/img/wn/${day4Icon}@2x.png`
   $("#day4WeatherIcon").html("<img src='" + icon4Url + "'>");
 }
+// Get weather icons for five day forecast ends
 
 // day 5 icon
 var day5WeatherIcon = function(day5Icon) {
@@ -284,7 +294,6 @@ var day5WeatherIcon = function(day5Icon) {
 }
 
 // Get dates for five day forecast start
-
 // day 1 date
 var day1Weather = function(day1) {
   $("#day1-date").text(day1);
@@ -309,11 +318,9 @@ var day4Weather = function(day4) {
 var day5Weather = function(day5) {
   $("#day5-date").text(day5);
 }
-
 // Get dates for five day forecast ends
 
 // Get temperatures for five day forecast starts
-
 // day 1 temp
 var tempDay1 = function(temp1) {
   $("#dayOneTemp").text(temp1);
@@ -338,11 +345,9 @@ var tempDay4 = function(temp4) {
 var tempDay5 = function(temp5) {
   $("#dayFiveTemp").text(temp5);
 }
-
 // Get temperatures for five day forecast ends
 
 // Get wind speeds for five day forecast starts
-
 // day 1 wind
 var windDay1 = function(wind1) {
     $("#dayOneWind").text(wind1);
@@ -432,6 +437,7 @@ $("#searchBtn").on("click", function() {
 
 });
 
+// load history items
 var historyItem = function(search) {
     // check for local storage or empty array
     var searches = JSON.parse(localStorage.getItem("allSearches")) || []
@@ -446,11 +452,6 @@ var historyItem = function(search) {
     // console.log(newSearch.text);
     loadSearches(newSearch.text);
 }
-// // cities list item event handler
-// $("#citiesListItem").on("click", function() {
-//   var citiesListItem
-// })
-  
-// }
+
 // load search history
 loadSearches();
