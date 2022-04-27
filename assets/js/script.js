@@ -405,12 +405,18 @@ var loadSearches = function(newSearchItem) {
     searches = [];
   }
   else if(newSearchItem) {
-    $("#listCities").append('<li class="cities-list-item" id="citiesListItem">' + newSearchItem + '</li>');
+    $("#listCities").append('<li class="cities-list-item">' + newSearchItem + '</li>'); // make unique id's
   } else {
     searches.forEach(function(searchItem) {
-      $("#listCities").append('<li class="cities-list-item" id="citiesListItem">' + searchItem.text + '</li>');
+      $("#listCities").append('<li class="cities-list-item">' + searchItem.text + '</li>');
     });
   }
+  // cities list item event handler
+  $(".cities-list-item").on("click", function() {
+    var citiesListItem = $(this).text();
+    console.log(citiesListItem);
+    getLatLon(citiesListItem);
+  })
 }
 
 // search button handler
@@ -422,25 +428,28 @@ $("#searchBtn").on("click", function() {
       window.alert("Invalid entry! Please search by city name.")
       return false;
   }
-  
-  // check for local storage or empty array
-  var searches = JSON.parse(localStorage.getItem("allSearches")) || []
-  var newSearch = {
-    'text': search
-  }
-  
-  searches.push(newSearch);
+  historyItem(search);
 
-  // stringify value of local storage
-  localStorage.setItem("allSearches", JSON.stringify(searches))
-  console.log(newSearch.text);
-  loadSearches(newSearch.text);
 });
 
-// cities list item event handler
-$("#citiesListItem").on("click", function() {
+var historyItem = function(search) {
+    // check for local storage or empty array
+    var searches = JSON.parse(localStorage.getItem("allSearches")) || []
+    var newSearch = {
+      'text': search
+    }
+    
+    searches.push(newSearch);
   
-})
+    // stringify value of local storage
+    localStorage.setItem("allSearches", JSON.stringify(searches))
+    // console.log(newSearch.text);
+    loadSearches(newSearch.text);
+}
+// // cities list item event handler
+// $("#citiesListItem").on("click", function() {
+//   var citiesListItem
+// })
   
 // }
 // load search history
