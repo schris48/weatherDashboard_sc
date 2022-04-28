@@ -85,6 +85,11 @@ ol li, .cities-list-item {
   padding: 4px;
 }
 
+.card-body {
+  padding: 0.4rem;
+  padding-top: 0.75rem;
+}
+
 .card {
   background-color: #33475B;
   margin: 10px;
