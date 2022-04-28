@@ -11,12 +11,7 @@ div h4, p {
 }
 
 div img {
-  width: 25%;
   padding: 5px;
-}
-
-header {
-  display: inline;
 }
 
 h1 {
@@ -33,7 +28,7 @@ h2 {
 }
 
 h3 {
-    padding: 5px;
+    padding: 26px;
     font-weight: bold;
 }
 
@@ -49,9 +44,9 @@ ul li {
   list-style: none;
 }
 
-main {
+/* main {
   display: inline;
-}
+} */
 
 ol {
   border-top: 1px solid black;
@@ -69,7 +64,7 @@ ol li, .cities-list-item {
 }
 
 .btn {
-  display: block;
+  /* display: block; */
   width: 96%;
   margin: 10px;
   box-shadow: 0 4px var(--grey);
@@ -86,20 +81,13 @@ ol li, .cities-list-item {
 }
 
 .currentCity {
-  float: right;
+  border: solid black 1px;
   padding: 4px;
-  display: inline-flex;
-  width: 70%;
 }
 
-.card-body {
+.card {
   background-color: #33475B;
-  display: inline;
-}
-
-.container {
-  width: 30%;
-  display: inline-flex;
+  margin: 10px;
 }
 
 .current-weather-list {
@@ -110,24 +98,17 @@ ol li, .cities-list-item {
   padding: 4px;
 }
 
-.fiveDayForecast {
-  display: inline;
+.forecasts {
+    margin: auto;
+    padding: 20px;
 }
-
-.row {
-  display: inline;
-}
-
 .uvIndex {
   padding: 4px;
   border-radius: 4px;
 }
 
 @media screen and (max-width: 1130px) {
-  main {
+  .currentCity, .col-3, .fiveDayHeading, .fiveDayForecast {
     display: block;
-  }
-  .fiveDayForecast {
-    display: inline-block;
   }
 }

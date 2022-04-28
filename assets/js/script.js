@@ -1,5 +1,7 @@
+var currentCitySection = document.querySelector("#current-city")
 var citiesListOl = document.querySelector("#citiesList");
 var citiesListItem = document.querySelector("#citiesListItem");
+var fiveDayHeadingEl = document.querySelector("#fiveDayHeading");
 var fiveDayForecastSection = document.querySelector("#five-day-forecast");
 var currentWeatherListEl = document.querySelector("#currentWeatherList");
 var uvEl = document.getElementById("uvi");
@@ -418,6 +420,9 @@ var loadSearches = function(newSearchItem) {
   }
   // cities list item event handler
   $(".cities-list-item").on("click", function() {
+    fiveDayForecastSection.style.display="flex";
+    fiveDayHeadingEl.style.display="flex";
+    currentCitySection.style.display="flex";
     var citiesListItem = $(this).text();
     console.log(citiesListItem);
     getLatLon(citiesListItem);
@@ -426,7 +431,9 @@ var loadSearches = function(newSearchItem) {
 
 // search button handler
 $("#searchBtn").on("click", function() {
-  fiveDayForecastSection.style.display="inline-block";
+  fiveDayForecastSection.style.display="flex";
+  fiveDayHeadingEl.style.display="flex";
+  currentCitySection.style.display="flex";
   var search = $("#searchInput").val();
   getLatLon(search)
   if (!search) {
